@@ -1,0 +1,19 @@
+{
+  "name": "travelbharat",
+  "version": "1.0.0",
+  "description": "TravelBharat - Explore India Tourism Platform & REST API Backend",
+  "main": "Backend/server.js",
+  "scripts": {
+    "start": "node Backend/server.js",
+    "dev": "node Backend/server.js",
+    "server": "cd Backend && npm start",
+    "seed": "cd Backend && npm run seed"
+  },
+  "keywords": [
+    "travelbharat",
+    "tourism",
+    "india"
+  ],
+  "author": "TravelBharat Team",
+  "license": "ISC"
+}

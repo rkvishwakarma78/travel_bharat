@@ -25,9 +25,7 @@
         } catch(e) {}
       }
       if (!isAuthenticated) {
-        const currentPath = window.location.pathname.toLowerCase();
-        const loginUrl = (currentPath.includes('/backend') || currentPath.includes('\\backend')) ? '../login.html' : 'login.html';
-        window.location.replace(loginUrl);
+        window.location.replace('login.html');
       }
     })();
   </script>
@@ -361,7 +359,7 @@
   <!-- ================= SITE HEADER ================= -->
   <header class="site-header" id="siteHeader">
     <div class="header-container">
-      <a href="index.html" class="brand-logo" id="homeLogoLink" onclick="navigateToHome(event)">
+      <a href="index.html" class="brand-logo" id="homeLogoLink">
         <div class="logo-badge">TB</div>
         <span>Travel<span class="brand-highlight">Bharat</span></span>
       </a>
@@ -369,7 +367,7 @@
       <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
         <span class="admin-header-badge">Admin Panel</span>
         <span class="admin-user-pill" id="adminUserPill">👤 Admin</span>
-        <a href="index.html" id="viewWebsiteBtn" class="btn btn-sm btn-outline" onclick="navigateToHome(event)">View Website &rarr;</a>
+        <a href="index.html" id="viewWebsiteBtn" class="btn btn-sm btn-outline">View Website &rarr;</a>
         <button type="button" class="btn btn-sm btn-logout" onclick="handleAdminLogout()">🚪 Logout</button>
       </div>
     </div>
@@ -612,7 +610,7 @@
 
   <div id="toastNotification">✨ Operation Completed!</div>
 
-  <!-- Dynamic Scripts Loading with Failovers -->
+  <!-- Data Scripts with dynamic fallback resolution -->
   <script src="data/states.js" onerror="this.onerror=null; this.src='../data/states.js';"></script>
   <script src="data/cities.js" onerror="this.onerror=null; this.src='../data/cities.js';"></script>
   <script src="data/destinations.js" onerror="this.onerror=null; this.src='../data/destinations.js';"></script>
@@ -620,23 +618,11 @@
 
   <!-- Complete Admin Controller -->
   <script>
-    function navigateToHome(e) {
-      if (e) e.preventDefault();
-      const currentPath = window.location.pathname.toLowerCase();
-      if (currentPath.includes('/backend') || currentPath.includes('\\backend')) {
-        window.location.href = '../index.html';
-      } else {
-        window.location.href = 'index.html';
-      }
-    }
-
     function handleAdminLogout() {
       if (confirm('Are you sure you want to log out of the admin panel?')) {
         localStorage.removeItem('travelbharat_admin_session');
         sessionStorage.removeItem('travelbharat_admin_session');
-        const currentPath = window.location.pathname.toLowerCase();
-        const loginUrl = (currentPath.includes('/backend') || currentPath.includes('\\backend')) ? '../login.html' : 'login.html';
-        window.location.href = loginUrl;
+        window.location.href = 'login.html';
       }
     }
 

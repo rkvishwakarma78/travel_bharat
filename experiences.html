@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Discover India by travel experience: Heritage Forts, Pristine Beaches, Mountain Adventures, Spiritual Sanctuaries, and Wildlife Safaris on TravelBharat." />
+  <meta name="description"
+    content="Discover India by travel experience: Heritage Forts, Pristine Beaches, Mountain Adventures, Spiritual Sanctuaries, and Wildlife Safaris on TravelBharat." />
   <title>Travel Experiences & Themes in India – TravelBharat</title>
 
   <!-- Core Stylesheets -->
@@ -11,6 +13,7 @@
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
+
 <body>
 
   <!-- ================= SITE HEADER ================= -->
@@ -29,10 +32,12 @@
         <a href="search.html" class="nav-link">Explore</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="contact.html" class="nav-link">Contact</a>
+        <a href="login.html" class="nav-link nav-admin-link">🔒 Admin Login</a>
       </nav>
 
       <div class="header-actions">
-        <button type="button" class="search-trigger-btn" onclick="window.location.href='search.html'" aria-label="Open Search">
+        <button type="button" class="search-trigger-btn" onclick="window.location.href='search.html'"
+          aria-label="Open Search">
           <span class="search-icon">🔍</span>
           <span>Search...</span>
           <span class="kbd-shortcut">Ctrl K</span>
@@ -62,13 +67,15 @@
       <a href="search.html" class="mobile-nav-link">Explore & Search <span>&rarr;</span></a>
       <a href="about.html" class="mobile-nav-link">About Us <span>&rarr;</span></a>
       <a href="contact.html" class="mobile-nav-link">Contact <span>&rarr;</span></a>
+      <a href="login.html" class="mobile-nav-link nav-admin-link-mobile">🔒 Admin Login <span>&rarr;</span></a>
     </nav>
   </aside>
 
   <!-- ================= MAIN CONTENT ================= -->
   <main>
     <!-- Header Banner -->
-    <section style="background: linear-gradient(135deg, #1e1b4b 0%, var(--secondary) 100%); color: #ffffff; padding: 3.5rem 0 2.5rem 0;">
+    <section
+      style="background: linear-gradient(135deg, #1e1b4b 0%, var(--secondary) 100%); color: #ffffff; padding: 3.5rem 0 2.5rem 0;">
       <div class="container">
         <!-- Breadcrumbs -->
         <nav aria-label="Breadcrumb" class="breadcrumbs" style="color: #cbd5e1; margin-bottom: 1rem;">
@@ -106,7 +113,8 @@
     <!-- Curated Destinations for Active Theme -->
     <section class="section" id="themeResultsSection">
       <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem;">
+        <div
+          style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem;">
           <div>
             <span class="section-tag" id="activeCategoryBadge">All Experiences</span>
             <h2 class="section-title heading-display" id="activeCategoryTitle" style="margin-bottom: 0.25rem;">
@@ -119,8 +127,10 @@
 
           <!-- Secondary Region Filter -->
           <div style="display: flex; gap: 0.75rem; align-items: center;">
-            <label for="regionFilterSelect" style="font-size: 0.875rem; font-weight: 600; color: var(--text-muted);">Region:</label>
-            <select id="regionFilterSelect" style="padding: 0.45rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: #fff; font-size: 0.875rem;">
+            <label for="regionFilterSelect"
+              style="font-size: 0.875rem; font-weight: 600; color: var(--text-muted);">Region:</label>
+            <select id="regionFilterSelect"
+              style="padding: 0.45rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: #fff; font-size: 0.875rem;">
               <option value="all">All Regions</option>
               <option value="North">North India</option>
               <option value="South">South India</option>
@@ -157,7 +167,8 @@
             <div class="logo-badge">TB</div>
             <span>Travel<span class="brand-highlight">Bharat</span></span>
           </div>
-          <p>TravelBharat is an independent tourism discovery platform showcasing India's rich heritage, diverse cultures, and stunning natural wonders.</p>
+          <p>TravelBharat is an independent tourism discovery platform showcasing India's rich heritage, diverse
+            cultures, and stunning natural wonders.</p>
         </div>
         <div class="footer-column">
           <h4>Explore India</h4>
@@ -236,13 +247,13 @@
         `).join('');
       }
 
-      window.selectExperience = function(catId) {
+      window.selectExperience = function (catId) {
         activeCatId = catId;
         // Update URL parameter without reload
         const newUrl = catId === 'all' ? 'experiences.html' : `experiences.html?cat=${catId}`;
         window.history.pushState({ path: newUrl }, '', newUrl);
         renderCategoryPlaces();
-        
+
         // Scroll smoothly to results
         const resultsEl = document.getElementById('themeResultsSection');
         if (resultsEl) resultsEl.scrollIntoView({ behavior: 'smooth' });
@@ -312,4 +323,5 @@
     });
   </script>
 </body>
+
 </html>

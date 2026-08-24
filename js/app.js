@@ -101,4 +101,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     statNumbers.forEach(stat => counterObserver.observe(stat));
   }
+
+  // 6. Admin Navigation State Sync
+  function syncAdminNavState() {
+    const session = localStorage.getItem('travelbharat_admin_session') || sessionStorage.getItem('travelbharat_admin_session');
+    let isLoggedIn = false;
+    if (session) {
+      try {
+        const parsed = JSON.parse(session);
+        if (parsed && parsed.authenticated) isLoggedIn = true;
+      } catch(e) {}
+    }
+
+    const desktopAdminLinks = document.querySelectorAll('.nav-admin-link');
+    const mobileAdminLinks = document.querySelectorAll('.nav-admin-link-mobile');
+
+    desktopAdminLinks.forEach(link => {
+      if (isLoggedIn) {
+        link.href = 'admin.html';
+        link.innerHTML = '⚙️ Admin Dashboard';
+        link.classList.add('logged-in');
+        link.title = 'Access Admin Dashboard';
+      } else {
+        link.href = 'login.html';
+        link.innerHTML = '🔒 Admin Login';
+        link.classList.remove('logged-in');
+        link.title = 'Sign in to Admin Dashboard';
+      }
+    });
+
+    mobileAdminLinks.forEach(link => {
+      if (isLoggedIn) {
+        link.href = 'admin.html';
+        link.innerHTML = '⚙️ Admin Dashboard <span>&rarr;</span>';
+        link.classList.add('logged-in');
+      } else {
+        link.href = 'login.html';
+        link.innerHTML = '🔒 Admin Login <span>&rarr;</span>';
+        link.classList.remove('logged-in');
+      }
+    });
+  }
+
+  syncAdminNavState();
 });
