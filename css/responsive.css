@@ -1,6 +1,6 @@
 /* ==========================================================================
    TRAVELBHARAT - RESPONSIVE STYLES (responsive.css)
-   Description: Media queries and adaptive layouts for all viewports
+   Description: Media queries and adaptive layouts for all viewports (Mobile, Tablet, Desktop)
    ========================================================================== */
 
 /* --- Large Desktops (1440px and above) --- */
@@ -32,6 +32,13 @@
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
+  }
+
+  .about-grid,
+  .place-hero-grid,
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
   }
 }
 
@@ -68,16 +75,16 @@
 
   /* Hero */
   .hero-section {
-    min-height: 500px;
+    min-height: 480px;
     padding: 3.5rem 1rem 4.5rem 1rem;
   }
 
   .hero-title {
-    font-size: 2.25rem;
+    font-size: 2.15rem;
   }
 
   .hero-subtitle {
-    font-size: 1.05rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
   }
 
@@ -95,6 +102,11 @@
 
   .hero-search-btn {
     width: 100%;
+  }
+
+  .hero-quick-tags {
+    justify-content: center;
+    gap: 0.4rem;
   }
 
   /* Stats */
@@ -116,12 +128,45 @@
     font-size: 0.8125rem;
   }
 
-  /* Cards */
-  .places-grid, .states-grid, .cities-grid, .experiences-grid {
+  /* Filter Tabs */
+  .filter-tabs-wrapper {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tab-btn {
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  /* Grid Layouts */
+  .places-grid, 
+  .states-grid, 
+  .cities-grid, 
+  .experiences-grid,
+  .features-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
 
+  .about-grid,
+  .place-hero-grid,
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Form Rows */
+  .form-row-2col,
+  div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* CTA Banner */
   .cta-banner {
     padding: 3rem 1.5rem;
   }
@@ -130,6 +175,7 @@
     font-size: 1.85rem;
   }
 
+  /* Footer */
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -140,16 +186,34 @@
     gap: 1rem;
     text-align: center;
   }
+
+  /* Admin & Login Responsive */
+  .login-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .admin-container {
+    padding: 1.5rem 1rem 3rem 1rem;
+  }
+
+  .admin-tabs {
+    gap: 0.25rem;
+  }
+
+  .admin-tab-btn {
+    padding: 0.65rem 1rem;
+    font-size: 0.85rem;
+  }
 }
 
 /* --- Small Mobile Phones (max-width: 480px) --- */
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 1.95rem;
+    font-size: 1.85rem;
   }
 
   .hero-subtitle {
-    font-size: 0.9375rem;
+    font-size: 0.9rem;
   }
 
   .hero-pill {
@@ -166,16 +230,33 @@
   }
 
   .section-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .brand-logo {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
   .brand-logo .logo-badge {
     width: 32px;
     height: 32px;
-    font-size: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .place-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .place-explore-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .login-options-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
 }
