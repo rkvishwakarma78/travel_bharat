@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore 200+ tourist cities and towns across all 36 States & Union Territories of India. Find top attractions, travel guides, how to reach, best season, and verified photography on TravelBharat." />
+  <title>All 200+ Tourist Cities & Towns in India – TravelBharat</title>
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="TravelBharat Homepage">
+        <div class="logo-badge">TB</div>
+        <span>Travel<span class="brand-highlight">Bharat</span></span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="states.html" class="nav-link">States & UTs</a>
+        <a href="cities.html" class="nav-link active">Cities</a>
+        <a href="experiences.html" class="nav-link">Experiences</a>
+        <a href="search.html" class="nav-link">Explore</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="login.html" class="nav-link nav-admin-link">🔒 Admin Login</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="search-trigger-btn" onclick="window.location.href='search.html'" aria-label="Open Search">
+          <span class="search-icon">🔍</span>
+          <span>Search...</span>
+          <span class="kbd-shortcut">Ctrl K</span>
+        </button>
+        <button type="button" class="mobile-toggle-btn" id="mobileToggle" aria-label="Toggle Mobile Navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay" id="mobileOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="logo-badge">TB</div>
+        <span>Travel<span class="brand-highlight">Bharat</span></span>
+      </div>
+      <button type="button" class="mobile-drawer-close" id="mobileClose">&times;</button>
+    </div>
+    <nav class="mobile-nav-list">
+      <a href="index.html" class="mobile-nav-link">Home <span>&rarr;</span></a>
+      <a href="states.html" class="mobile-nav-link">States & UTs <span>&rarr;</span></a>
+      <a href="cities.html" class="mobile-nav-link active">Cities (200+) <span>&rarr;</span></a>
+      <a href="experiences.html" class="mobile-nav-link">Experiences <span>&rarr;</span></a>
+      <a href="search.html" class="mobile-nav-link">Explore & Search <span>&rarr;</span></a>
+      <a href="about.html" class="mobile-nav-link">About Us <span>&rarr;</span></a>
+      <a href="contact.html" class="mobile-nav-link">Contact <span>&rarr;</span></a>
+      <a href="login.html" class="mobile-nav-link nav-admin-link-mobile">🔒 Admin Login <span>&rarr;</span></a>
+    </nav>
+  </aside>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main>
+    <!-- Page Header Banner -->
+    <section style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); color: #ffffff; padding: 3.5rem 0 2.5rem 0;">
+      <div class="container">
+        <!-- Breadcrumbs -->
+        <nav aria-label="Breadcrumb" class="breadcrumbs" style="color: #cbd5e1; margin-bottom: 1rem;">
+          <ol style="display:flex; align-items:center; gap:0.5rem; flex-wrap: wrap;">
+            <li class="breadcrumb-item"><a href="index.html" style="color:#cbd5e1;">Home</a></li>
+            <span class="breadcrumb-sep">&rsaquo;</span>
+            <li class="breadcrumb-item current" style="color:#ffedd5;">Cities of India</li>
+          </ol>
+        </nav>
+
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.75rem;">
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.12); padding: 0.3rem 0.85rem; border-radius: var(--radius-pill); font-size: 0.8125rem; font-weight: 600; color: #fed7aa; margin-bottom: 0.75rem; border: 1px solid rgba(255,255,255,0.15);">
+              <span>🏛️</span> 200+ Curated Cities across 36 States & UTs
+            </div>
+            <h1 class="heading-display" style="font-size: 2.75rem; margin-bottom: 0.75rem; color: #ffffff;">
+              Explore India's Tourist Cities
+            </h1>
+            <p style="font-size: 1.1rem; color: #e2e8f0; max-width: 720px;">
+              Discover historic capitals, royal kingdoms, mountain retreats, spiritual centers, and vibrant coastal cities with complete travel guides, top attractions, and transit info.
+            </p>
+          </div>
+        </div>
+
+        <!-- Live City Search Bar -->
+        <div style="display: flex; gap: 1rem; max-width: 600px; background: #ffffff; border-radius: var(--radius-pill); padding: 0.4rem 0.6rem 0.4rem 1.25rem; box-shadow: var(--shadow-lg);">
+          <span style="display:flex; align-items:center; color: var(--text-muted); font-size: 1.1rem;">🔍</span>
+          <input 
+            type="text" 
+            id="citySearchInput" 
+            placeholder="Search city by name, state, or region (e.g. Manali, Varanasi, Jaipur, Goa)..." 
+            style="flex: 1; border: none; outline: none; font-size: 0.9375rem; color: var(--text-main); min-width: 150px;"
+            aria-label="Filter cities"
+          />
+          <button type="button" id="clearSearchBtn" class="btn btn-sm btn-outline" style="display:none; padding: 0.3rem 0.8rem;">Clear</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cities Catalog Section -->
+    <section class="section">
+      <div class="container">
+        <!-- Tier & Type Filter Tabs -->
+        <div class="filter-tabs-wrapper" id="tierTabs" role="tablist" style="margin-bottom: 1.5rem;">
+          <button type="button" class="tab-btn active" data-tier="all" role="tab" aria-selected="true">All Cities (200+)</button>
+          <button type="button" class="tab-btn" data-tier="major" role="tab">Major Tourist Hubs</button>
+          <button type="button" class="tab-btn" data-tier="hills" role="tab">Hill Stations</button>
+          <button type="button" class="tab-btn" data-tier="heritage" role="tab">Heritage & Royal</button>
+          <button type="button" class="tab-btn" data-tier="spiritual" role="tab">Spiritual & Holy</button>
+          <button type="button" class="tab-btn" data-tier="beach" role="tab">Coastal & Beaches</button>
+          <button type="button" class="tab-btn" data-tier="offbeat" role="tab">Offbeat & Gems</button>
+        </div>
+
+        <!-- Filter Controls Bar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; padding: 1rem 1.25rem; background: var(--bg-alt); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+            <!-- State Select Filter -->
+            <label for="stateFilterSelect" style="font-size: 0.875rem; font-weight: 600; color: var(--text-main);">Filter by State:</label>
+            <select id="stateFilterSelect" style="padding: 0.45rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: #fff; font-size: 0.875rem; color: var(--text-main);" aria-label="Filter by State">
+              <option value="all">All States & UTs (36)</option>
+              <!-- Dynamically Populated -->
+            </select>
+
+            <!-- Region Filter -->
+            <select id="regionFilterSelect" style="padding: 0.45rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: #fff; font-size: 0.875rem; color: var(--text-main);" aria-label="Filter by Region">
+              <option value="all">All Regions</option>
+              <option value="North">North India</option>
+              <option value="South">South India</option>
+              <option value="West">West India</option>
+              <option value="East">East India</option>
+              <option value="Northeast">Northeast India</option>
+              <option value="Central">Central India</option>
+              <option value="ut">Union Territories</option>
+            </select>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+            <span id="citiesCountLabel" style="color: var(--text-muted); font-size: 0.9375rem; font-weight: 500;">Showing all cities</span>
+            <select id="citySortSelect" style="padding: 0.45rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: #fff; font-size: 0.875rem; color: var(--text-main);" aria-label="Sort cities">
+              <option value="name-asc">Sort: A to Z</option>
+              <option value="name-desc">Sort: Z to A</option>
+              <option value="state">Sort: By State</option>
+              <option value="major">Sort: Major Hubs First</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dynamic Cities Grid -->
+        <div class="cities-grid" id="citiesContainer">
+          <!-- Rendered via JavaScript -->
+        </div>
+
+        <!-- Empty State (Shown if no search match) -->
+        <div id="noCitiesFound" class="empty-state" style="display: none;">
+          <div class="empty-state-icon">🏙️</div>
+          <h3 class="empty-state-title">No Cities Found</h3>
+          <p class="empty-state-desc">No Indian tourist city matched your current search filters. Try clearing your search query or selecting another state.</p>
+          <button type="button" class="btn btn-primary" id="resetFiltersBtn">Reset All Filters</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="logo-badge">TB</div>
+            <span>Travel<span class="brand-highlight">Bharat</span></span>
+          </div>
+          <p>TravelBharat is an independent tourism discovery platform showcasing India's rich heritage, diverse cultures, and stunning natural wonders.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Explore India</h4>
+          <div class="footer-links">
+            <a href="states.html">All 36 States & UTs</a>
+            <a href="cities.html">200+ Cities</a>
+            <a href="experiences.html">Travel Experiences</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="search.html">Advanced Search</a>
+            <a href="about.html">About TravelBharat</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <p style="font-size: 0.875rem; color: #94a3b8; line-height: 1.6;">
+            Select any city card to discover its top tourist attractions, travel essentials, transit connections, and weather guides.
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 TravelBharat. Discover India. One Journey at a Time.</div>
+        <div><a href="index.html">Home</a> • <a href="states.html">States & UTs</a> • <a href="about.html">About</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Scroll to top">&uarr;</button>
+
+  <!-- ================= JAVASCRIPT MODULES ================= -->
+  <script src="data/images.js"></script>
+  <script src="data/experiences.js"></script>
+  <script src="data/states.js"></script>
+  <script src="data/cities.js"></script>
+  <script src="data/destinations.js"></script>
+
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Cities Page Controller Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('citiesContainer');
+      const countLabel = document.getElementById('citiesCountLabel');
+      const searchInput = document.getElementById('citySearchInput');
+      const clearBtn = document.getElementById('clearSearchBtn');
+      const stateSelect = document.getElementById('stateFilterSelect');
+      const regionSelect = document.getElementById('regionFilterSelect');
+      const sortSelect = document.getElementById('citySortSelect');
+      const tierBtns = document.querySelectorAll('#tierTabs .tab-btn');
+      const noCitiesFound = document.getElementById('noCitiesFound');
+      const resetBtn = document.getElementById('resetFiltersBtn');
+
+      let currentTier = 'all';
+      let selectedState = 'all';
+      let selectedRegion = 'all';
+      let searchQuery = '';
+      let currentSort = 'name-asc';
+
+      // 1. Populate State Filter Dropdown
+      const states = TravelBharatData.getAllStates();
+      states.sort((a, b) => a.name.localeCompare(b.name));
+      states.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s.id;
+        opt.textContent = `${s.name} ${s.type === 'ut' ? '(UT)' : ''}`;
+        stateSelect.appendChild(opt);
+      });
+
+      // 2. Check URL Query Parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const paramState = urlParams.get('state');
+      const paramRegion = urlParams.get('region');
+      const paramTier = urlParams.get('tier');
+      const paramQ = urlParams.get('q');
+
+      if (paramState) {
+        selectedState = paramState;
+        stateSelect.value = paramState;
+      }
+      if (paramRegion) {
+        selectedRegion = paramRegion;
+        regionSelect.value = paramRegion;
+      }
+      if (paramTier) {
+        currentTier = paramTier;
+        tierBtns.forEach(btn => {
+          if (btn.getAttribute('data-tier').toLowerCase() === paramTier.toLowerCase()) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+      }
+      if (paramQ) {
+        searchQuery = paramQ;
+        searchInput.value = paramQ;
+        clearBtn.style.display = 'inline-flex';
+      }
+
+      // Keyword categorizer helper for themes
+      function matchesTheme(city, theme) {
+        if (theme === 'all') return true;
+        if (theme === 'major') return city.tier === 'major';
+        if (theme === 'offbeat') return city.tier === 'offbeat';
+
+        const text = `${city.name} ${city.knownAs || ''} ${city.overview || ''}`.toLowerCase();
+        if (theme === 'hills') {
+          return text.includes('hill') || text.includes('mountain') || text.includes('snow') || text.includes('altitude') || text.includes('himalay') || text.includes('valley');
+        }
+        if (theme === 'heritage') {
+          return text.includes('palace') || text.includes('fort') || text.includes('royal') || text.includes('historic') || text.includes('unesco') || text.includes('heritage') || text.includes('dynasty') || text.includes('ancient');
+        }
+        if (theme === 'spiritual') {
+          return text.includes('temple') || text.includes('ghat') || text.includes('holy') || text.includes('spiritual') || text.includes('pilgrim') || text.includes('sacred') || text.includes('monastery') || text.includes('jyotirlinga') || text.includes('mosque') || text.includes('church');
+        }
+        if (theme === 'beach') {
+          return text.includes('beach') || text.includes('coastal') || text.includes('sea') || text.includes('port') || text.includes('backwater') || text.includes('island');
+        }
+        return true;
+      }
+
+      function renderCities() {
+        let cities = TravelBharatData.getAllCities();
+
+        // Filter 1: State
+        if (selectedState !== 'all') {
+          cities = cities.filter(c => c.stateId.toLowerCase() === selectedState.toLowerCase());
+        }
+
+        // Filter 2: Region
+        if (selectedRegion !== 'all') {
+          if (selectedRegion.toLowerCase() === 'ut') {
+            const utStates = TravelBharatData.getAllStates().filter(s => s.type === 'ut').map(s => s.id.toLowerCase());
+            cities = cities.filter(c => utStates.includes(c.stateId.toLowerCase()));
+          } else {
+            cities = cities.filter(c => (c.region || '').toLowerCase() === selectedRegion.toLowerCase());
+          }
+        }
+
+        // Filter 3: Tier / Theme
+        if (currentTier !== 'all') {
+          cities = cities.filter(c => matchesTheme(c, currentTier));
+        }
+
+        // Filter 4: Search Query
+        if (searchQuery) {
+          const q = searchQuery.toLowerCase();
+          cities = cities.filter(c => {
+            const stateObj = TravelBharatData.getStateById(c.stateId);
+            const stateName = stateObj ? stateObj.name.toLowerCase() : '';
+            return (
+              c.name.toLowerCase().includes(q) ||
+              stateName.includes(q) ||
+              (c.knownAs && c.knownAs.toLowerCase().includes(q)) ||
+              (c.overview && c.overview.toLowerCase().includes(q)) ||
+              (c.region && c.region.toLowerCase().includes(q))
+            );
+          });
+        }
+
+        // Sort Cities
+        if (currentSort === 'name-asc') {
+          cities.sort((a, b) => a.name.localeCompare(b.name));
+        } else if (currentSort === 'name-desc') {
+          cities.sort((a, b) => b.name.localeCompare(a.name));
+        } else if (currentSort === 'state') {
+          cities.sort((a, b) => {
+            const stateA = (TravelBharatData.getStateById(a.stateId) || {}).name || '';
+            const stateB = (TravelBharatData.getStateById(b.stateId) || {}).name || '';
+            return stateA.localeCompare(stateB) || a.name.localeCompare(b.name);
+          });
+        } else if (currentSort === 'major') {
+          cities.sort((a, b) => {
+            if (a.tier === 'major' && b.tier !== 'major') return -1;
+            if (a.tier !== 'major' && b.tier === 'major') return 1;
+            return a.name.localeCompare(b.name);
+          });
+        }
+
+        // Render to DOM
+        if (cities.length === 0) {
+          container.innerHTML = '';
+          noCitiesFound.style.display = 'block';
+          countLabel.textContent = '0 cities found';
+        } else {
+          noCitiesFound.style.display = 'none';
+          container.innerHTML = cities.map(c => TravelBharatUI.createCityCard(c)).join('');
+          countLabel.textContent = `Showing ${cities.length} ${cities.length === 1 ? 'City' : 'Cities across India'}`;
+        }
+      }
+
+      // Initial Render
+      renderCities();
+
+      // Tier/Category Tabs Click
+      tierBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tierBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentTier = btn.getAttribute('data-tier');
+          renderCities();
+        });
+      });
+
+      // State Select Change
+      stateSelect.addEventListener('change', (e) => {
+        selectedState = e.target.value;
+        renderCities();
+      });
+
+      // Region Select Change
+      regionSelect.addEventListener('change', (e) => {
+        selectedRegion = e.target.value;
+        renderCities();
+      });
+
+      // Sort Select Change
+      sortSelect.addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        renderCities();
+      });
+
+      // Search Input
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim();
+        clearBtn.style.display = searchQuery ? 'inline-flex' : 'none';
+        renderCities();
+      });
+
+      // Clear Search
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchQuery = '';
+        clearBtn.style.display = 'none';
+        searchInput.focus();
+        renderCities();
+      });
+
+      // Reset All Filters
+      resetBtn.addEventListener('click', () => {
+        currentTier = 'all';
+        selectedState = 'all';
+        selectedRegion = 'all';
+        searchQuery = '';
+        searchInput.value = '';
+        clearBtn.style.display = 'none';
+        stateSelect.value = 'all';
+        regionSelect.value = 'all';
+        tierBtns.forEach(b => b.classList.remove('active'));
+        if (tierBtns[0]) tierBtns[0].classList.add('active');
+        renderCities();
+      });
+    });
+  </script>
+</body>
+</html>

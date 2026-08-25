@@ -58,12 +58,14 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('keydown', (e) => {
     if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
       e.preventDefault();
-      const heroSearch = document.getElementById('heroSearchInput');
-      const navSearchBtn = document.getElementById('navSearchBtn');
-      if (heroSearch) {
-        heroSearch.focus();
-        heroSearch.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else if (navSearchBtn) {
+      const pageSearchInput = document.getElementById('heroSearchInput') || 
+                              document.getElementById('citySearchInput') || 
+                              document.getElementById('stateSearchInput') || 
+                              document.getElementById('globalSearchInput');
+      if (pageSearchInput) {
+        pageSearchInput.focus();
+        pageSearchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
         window.location.href = 'search.html';
       }
     }

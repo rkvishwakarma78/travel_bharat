@@ -25,7 +25,9 @@
         } catch(e) {}
       }
       if (!isAuthenticated) {
-        window.location.replace('login.html');
+        const currentPath = window.location.pathname.toLowerCase();
+        const loginUrl = (currentPath.includes('/backend') || currentPath.includes('\\backend')) ? '../login.html' : 'login.html';
+        window.location.replace(loginUrl);
       }
     })();
   </script>
